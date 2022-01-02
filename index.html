@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Pong</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="starting-menu">
+        <div class="starting-menu-title-container">
+            <p>A</p>
+            <p>Solitare</p>
+            <p>PONG</p>
+            <p>Game</p>
+        </div>
+        <button type="button" id="PlayButton">Play</button>
+        <div class="menu-ball-container">
+            <div class="menu-ball"></div>
+        </div>
+        <p class="author">CODED BY CLAYTON MCDANIEL</p>
+    </div>
+    <button id="SaveButton">Save</button>
+
+    <header>
+        <h1>Game of Pong</h1>
+        <div class="data-container">
+            <p>Score: <span id="ScoreOutput"></span></p>
+            <p>Level: <span id="LevelOutput"></span></p>
+            <p><span id="TimerOutput"></span></p>
+        </div>
+    </header>
+    <canvas id="canvas"></canvas>
+    <nav>
+        <button type="button" id="AgainButton" class="button">Again</button>
+        <button type="button" id="BeginButton" class="button">Begin</button>
+        <div id="MenuButton" class="button">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+    </nav>
+    <div class="menu">
+
+        <!--    ADD BUTTON TO HIGHSCORE RECORD MENU -->
+        <button id="HighScoresButton" class="high-scores-button" type="button">High Scores</button>
+        <h2>Menu</h2>
+        <div class="instructions-container">
+            <ul class="instructions-content">
+                <li class="instruction instruction1">Hit the ball with the paddle, gain a point</li>
+                <li class="instruction instruction2">Miss the ball with the paddle, lose a point</li>
+                <li class="instruction instruction3">Level goes up, ball gets faster</li>
+                <li class="instruction instruction4">Level goes up every 30 seconds</li>
+                <li class="instruction instruction5">'Save' to record score, level, and time</li>
+            </ul>
+        </div>
+        <div class="color-input-container">
+            <p class="color-container-title">Colors</p>
+            <div class="theme-color-container">
+                <div class="col">
+                    <label for="PrimaryColorInput">Primary</label>
+                    <input id="PrimaryColorInput" type="color" autocomplete="off" value="#1a1a1a">
+                </div>
+                <div class="col">
+                    <label for="ButtonsColorInput">Buttons</label>
+                    <input id="ButtonsColorInput" type="color" autocomplete="off" value="#1a1a1a">
+                </div>
+                <div class="col">
+                    <label for="TextColorInput">Text</label>
+                    <input id="TextColorInput" type="color" autocomplete="off" value="#ffffff">
+                </div>
+            </div>
+            <div class="game-color-container">
+                <div class="col">
+                    <label for="BallColorInput">Ball</label>
+                    <input id="BallColorInput" type="color" autocomplete="off" value="#ffffff">
+                </div>
+                <div class="col">
+                    <label for="PaddleColorInput">Paddle</label>
+                    <input id="PaddleColorInput" type="color" autocomplete="off" value="#ffffff">
+                </div>
+                <div class="col">
+                    <label for="TableColorInput">Table</label>
+                    <input id="TableColorInput" type="color" autocomplete="off" value="#1f1f1f">
+                </div>  
+            </div>
+            
+            
+        </div>
+    </div>
+    <!--    ADD SCORE SAVE INPUT SCREEN -->
+
+    <div class="saving-container">
+        <div class="saving-container-content">
+            <ul class="save-data-header">
+                <li>Score <span id="SaveScoreDataDisplay">00</span></li>
+                <li>Level <span id="SaveLevelDataDisplay">00</span></li>
+                <li>Time <span id="SaveTimeDataDisplay">00:00</span></li>
+            </ul>
+            <div class="save-name-container">
+                <label for="NameInput">Name</label>
+                <input id="NameInput" type="text" placeholder="AAA" maxlength="3">
+            </div>
+            <div class="save-buttons-container">
+                <button id="ConfirmSaveButton" type="button">Confirm & Save</button>
+                <button id="CancelSaveButton" type="button">Cancel</button>
+            </div>
+        </div>
+        <div class="decorative-bar decorative-bar1"></div>
+        <div class="decorative-bar decorative-bar2"></div>
+    </div>
+
+    <!--    HIGH SCORE PAGE -->
+
+    <div class="highscore-page">
+        <div class="highscore-page-content">
+            <button id="CloseHighScoresButton" type="button">Close</button>
+            <h2>HighScores</h2>
+            <table id="DataTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                        <th>Level</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- DATA COMES FROM LOCAL STORAGE -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/variables.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/vector.js"></script>
+    <script src="js/field.js"></script>
+    <script src="js/paddle.js"></script>
+    <script src="js/ball.js"></script>
+    <script src="js/scoreboard.js"></script>
+    <script src="js/game.js"></script>
+    <script src="intro.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
