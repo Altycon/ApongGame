@@ -22,7 +22,7 @@ body{
 /*  STARTING MENU   */
 
 .starting-menu{
-    overflow: hidden;
+/*     overflow: hidden; */
     position: absolute;
     top: 0; left: 0;
     width: 100vw;
